@@ -1,0 +1,158 @@
+# Copyright (C) 2020 PayTR Ödeme ve Elektronik Para Kuruluşu A.Ş.
+# This file is distributed under the same license as the PACKAGE package.
+msgid ""
+msgstr ""
+"Project-Id-Version: PayTR Installment Table WooCommerce 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-21 00:11+0300\n"
+"PO-Revision-Date: 2020-11-21 00:11+0300\n"
+"Last-Translator: PayTR Ödeme ve Elektronik Para Kuruluşu A.Ş.\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Plugin Name of the plugin
+msgid "PayTR Installment Table WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid "The plugin that allows you to show the installment options of your PayTR store on the product page."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:42
+msgid "WooCommerce is required to be installed and active!"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:46
+#, php-format
+msgid ""
+"WooCommerce %1$s or greater version to be installed and active. WooCommerce "
+"%2$s is no longer supported."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:87
+msgid "PayTR Installment Table WooCommerce"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:88
+msgid "PayTR Installment Table"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:89
+#: paytr-taksit-tablosu-woocommerce.php:122
+msgid "paytr-installment-table"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:122
+msgid "Settings"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:136
+msgid "Support"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:174
+msgid "Product Tab Title"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:183
+msgid "Merchant ID"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:192
+msgid "Token"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:201
+msgid "Max Installment"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:210
+msgid "Advantageous Installment"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:219
+msgid "Include Tax"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:228
+msgid "Content Title"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:237
+msgid "Top Description"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:246
+msgid "Bottom Description"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:259
+msgid "Merchant ID must be numeric."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:264
+msgid "Merchant ID and Token cannot empty!"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:275
+msgid "Saved Successfully."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:318
+msgid "The default value is <strong>Installment Table</strong>."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:354
+#: paytr-taksit-tablosu-woocommerce.php:361
+msgid "All Installment Options"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:356
+#: paytr-taksit-tablosu-woocommerce.php:363
+#, php-format
+msgid "Up To %2$s Installment"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:371
+msgid "You can choose the maximum number of installments you want to show."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:380
+msgid "Advantageous Installments"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:381
+msgid "All Installments"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:396
+#: paytr-taksit-tablosu-woocommerce.php:399
+msgid "Enabled"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:397
+#: paytr-taksit-tablosu-woocommerce.php:400
+msgid "Disabled"
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:419
+msgid "Add content above of the installment table."
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:427
+msgid "Add content under the installment table. "
+msgstr ""
+
+#: paytr-taksit-tablosu-woocommerce.php:455
+msgid "Installment Table"
+msgstr ""
+
+#: includes/admin/html-section-info.php:5
+#, php-format
+msgid ""
+"You can find your Merchant ID and Token in <a style=\"color: #fff;\" href="
+"\"%s\" target=\"_blank\">here</a>."
+msgstr ""
