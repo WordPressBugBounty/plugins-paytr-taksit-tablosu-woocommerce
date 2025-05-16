@@ -1,4 +1,5 @@
 <div>
+
 	<?php
 	// Get Options
 	$option_content_title      = sanitize_text_field( get_option( 'woocommerce_paytrtaksit_content_title' ) );
@@ -34,6 +35,8 @@
 
 	if ( ! empty( $option_description_top ) ) {
 		echo '<div class="paytr-installment-table-description-top">' . $option_description_top . '</div>';
+		echo '<button type="button" id="updateInstallmentsButton" class="button">' ;
+		 
 	}
 
 	echo '<div id="paytrInstallmentTableContent"></div>';
@@ -43,4 +46,5 @@
 	}
 
 	?>
+	
 </div>
