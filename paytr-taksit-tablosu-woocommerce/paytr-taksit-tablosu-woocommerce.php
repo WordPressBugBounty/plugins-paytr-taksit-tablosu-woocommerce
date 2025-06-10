@@ -3,7 +3,7 @@
  * Plugin Name: PayTR Installment Table WooCommerce
  * Plugin URI: https://wordpress.org/plugins/paytr-taksit-tablosu-woocommerce/
  * Description: The plugin that allows you to show the installment options of your PayTR store on the product page.
- * Version: 1.3.3
+ * Version: 1.3.4
  * Author: PayTR Ödeme ve Elektronik Para Kuruluşu A.Ş.
  * Author URI: http://www.paytr.com/
  * License: GPL v2 or later
