@@ -1,16 +1,13 @@
-
 <?php
-// Get Options
 
-$option_merchant_id       = get_option( 'woocommerce_paytrtaksit_merchant_id' );
-$option_token             = get_option( 'woocommerce_paytrtaksit_token' );
-$option_max_installment   = get_option( 'woocommerce_paytrtaksit_max_installment' );
-$option_extra_installment = get_option( 'woocommerce_paytrtaksit_extra_installment' );
-$option_amount            = sanitize_text_field( $_GET['paytr_installment_amount'] );
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-
+$amount = isset($_GET['paytr_installment_amount']) ? $_GET['paytr_installment_amount'] : '';
+if (!is_string($amount) || !preg_match('/^[0-9]{1,12}(?:\.[0-9]{1,2})?$/D', $amount) || (float) $amount <= 0) {
+    return;
+}
 
 echo '<div id="paytr_taksit_tablosu"></div>';
-
-printf( '<script src="https://www.paytr.com/odeme/taksit-tablosu/v2?token=%1$s&merchant_id=%2$s&amount=%3$s&taksit=%4$s&tumu=%5$s"></script>', sanitize_text_field( $option_token ), sanitize_text_field( $option_merchant_id ), $option_amount, sanitize_text_field( $option_max_installment ), sanitize_text_field( $option_extra_installment ) );
-?>
+printf('<script src="%s"></script>', esc_url(paytrtt_table_url($amount)));

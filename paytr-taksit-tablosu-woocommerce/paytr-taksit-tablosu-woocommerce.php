@@ -3,7 +3,7 @@
  * Plugin Name: PayTR Installment Table WooCommerce
  * Plugin URI: https://wordpress.org/plugins/paytr-taksit-tablosu-woocommerce/
  * Description: The plugin that allows you to show the installment options of your PayTR store on the product page.
- * Version: 1.3.4
+ * Version: 1.4
  * Author: PayTR Ödeme ve Elektronik Para Kuruluşu A.Ş.
  * Author URI: http://www.paytr.com/
  * License: GPL v2 or later
@@ -16,11 +16,24 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PAYTRTT_VERSION', '1.3.3');
+define('PAYTRTT_VERSION', '1.4');
 define('PAYTRTT_PLUGIN_URL', untrailingslashit(plugins_url('/', __FILE__)));
 define('PAYTRTT_PLUGIN_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 define('PAYTRTT_MIN_WC_VER', '3.0');
 define('PAYTRTT_MIN_WP_VER', '4.4');
+
+function paytrtt_table_url($amount = null) {
+    $params = [
+        'token' => get_option('woocommerce_paytrtaksit_token'),
+        'merchant_id' => get_option('woocommerce_paytrtaksit_merchant_id'),
+        'taksit' => (int) get_option('woocommerce_paytrtaksit_max_installment'),
+        'tumu' => (int) get_option('woocommerce_paytrtaksit_extra_installment'),
+    ];
+    if ($amount !== null) {
+        $params['amount'] = $amount;
+    }
+    return 'https://www.paytr.com/odeme/taksit-tablosu/v2?' . http_build_query($params, '', '&', PHP_QUERY_RFC3986);
+}
 
 function deactivate_paytrtt_plugin() {
     delete_option('woocommerce_paytrtaksit_product_tab_title');
@@ -327,14 +340,11 @@ function paytr_installment_table_init() {
                     : wc_get_price_excluding_tax($product);
 
                 wp_enqueue_style('paytr_installment_table_style', PAYTRTT_PLUGIN_URL . '/assets/css/style.css');
-                wp_enqueue_script('paytr_installment_table_js', PAYTRTT_PLUGIN_URL . '/assets/js/paytr.js');
+                wp_enqueue_script('paytr_installment_table_js', PAYTRTT_PLUGIN_URL . '/assets/js/paytr.js', ['jquery'], PAYTRTT_VERSION, true);
 
                 $js_data = [
                     'unit_price' => $unit_price,
-                    'paytr_merchant_id' => $this->paytr_merchant_id,
-                    'paytr_token' => $this->paytr_token,
-                    'paytr_max_installment' => get_option('woocommerce_paytrtaksit_max_installment'),
-                    'paytr_extra_installment' => get_option('woocommerce_paytrtaksit_extra_installment')
+                    'table_url' => paytrtt_table_url(),
                 ];
                 wp_localize_script('paytr_installment_table_js', 'paytr_object', $js_data);
 
@@ -351,13 +361,6 @@ function paytr_installment_table_init() {
                 if (!empty($op_description_bottom)) {
                     echo '<div class="paytr-installment-table-description-bottom">' . wp_kses_post($op_description_bottom) . '</div>';
                 }
-                wp_enqueue_script(
-                    'paytr_installment_table_js',
-                    PAYTRTT_PLUGIN_URL . '/assets/js/paytr.js',
-                    ['jquery'], // Sadece jQuery'ye bağımlı yapın
-                    filemtime(PAYTRTT_PLUGIN_PATH . '/assets/js/paytr.js'),
-                    true
-                  );
             }
 
             function displayAdminNotice($message, $noticeLevel) {

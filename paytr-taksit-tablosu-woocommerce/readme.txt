@@ -4,7 +4,7 @@ Tags: PayTR, taksit, taksit seçenekleri, taksit tablosu, WooCommerce
 Requires at least: 4.4
 Tested up to: 6.8
 Requires PHP: 5.4
-Stable tag: 1.3.4
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,15 @@ PayTR mağazanıza ait taksit seçeneklerini ürün detay sayfasına yeni bir **
 1. **PayTR Taksit** menüsünden gerekli düzenlemeleri yaparak kullanmaya başlayabilirsiniz.
 
 == Changelog ==
+= 1.4 =
+* PayTR logosu güncellendi.
+* Eklenti dosyalarına doğrudan erişim kontrolleri güçlendirildi.
+* Taksit tablosu isteklerinde ürün tutarı ve bağlantı parametrelerinin doğrulanması iyileştirildi.
+
+= 1.3.5 =
+* Taksit tablosu isteğinde tutar doğrulaması ve URL kodlaması güncellendi.
+* Varlık dizinlerindeki beklenmeyen PHP kodu ve kullanılmayan dosyalar kaldırıldı.
+
 = 1.3.4 =
 * Update - Sürüm uyumluluğu sağlandı.
 
